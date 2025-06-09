@@ -14,6 +14,12 @@ public class VmQuotaControllerV1 : ControllerBase
         _logger = logger;
     }
 
+    [HttpGet("usage")]
+    public async Task<VmQuotaUsage> GetQuotaUsageAsync([FromQuery] string location, [FromQuery] string vmSize, CancellationToken token = default)
+    {
+        throw new NotImplementedException();
+    }
+
     [HttpPost("requests")]
     public async Task<VmQuotaRequestResult> RequestQuotaAsync([FromBody] VmQuotaRequest request, CancellationToken token = default)
     {
